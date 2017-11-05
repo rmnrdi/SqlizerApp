@@ -39,6 +39,8 @@
             this.btnClearStringText = new System.Windows.Forms.Button();
             this.pbxUpArrow = new System.Windows.Forms.PictureBox();
             this.pbxDownArrow = new System.Windows.Forms.PictureBox();
+            this.chkUseResultsForm = new System.Windows.Forms.CheckBox();
+            this.btnClearBothTextBoxes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUpArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDownArrow)).BeginInit();
             this.SuspendLayout();
@@ -147,11 +149,33 @@
             this.pbxDownArrow.TabIndex = 6;
             this.pbxDownArrow.TabStop = false;
             // 
+            // chkUseResultsForm
+            // 
+            this.chkUseResultsForm.AutoSize = true;
+            this.chkUseResultsForm.Location = new System.Drawing.Point(700, 437);
+            this.chkUseResultsForm.Name = "chkUseResultsForm";
+            this.chkUseResultsForm.Size = new System.Drawing.Size(148, 24);
+            this.chkUseResultsForm.TabIndex = 7;
+            this.chkUseResultsForm.Text = "UseResultsForm";
+            this.chkUseResultsForm.UseVisualStyleBackColor = true;
+            // 
+            // btnClearBothTextBoxes
+            // 
+            this.btnClearBothTextBoxes.Location = new System.Drawing.Point(700, 488);
+            this.btnClearBothTextBoxes.Name = "btnClearBothTextBoxes";
+            this.btnClearBothTextBoxes.Size = new System.Drawing.Size(148, 76);
+            this.btnClearBothTextBoxes.TabIndex = 8;
+            this.btnClearBothTextBoxes.Text = "Clear Both Text Boxes";
+            this.btnClearBothTextBoxes.UseVisualStyleBackColor = true;
+            this.btnClearBothTextBoxes.Click += new System.EventHandler(this.btnClearBothTextBoxes_Click);
+            // 
             // SqlizerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1550, 881);
+            this.Controls.Add(this.btnClearBothTextBoxes);
+            this.Controls.Add(this.chkUseResultsForm);
             this.Controls.Add(this.pbxDownArrow);
             this.Controls.Add(this.pbxUpArrow);
             this.Controls.Add(this.btnClearStringText);
@@ -186,6 +210,8 @@
         private System.Windows.Forms.Button btnClearStringText;
         private System.Windows.Forms.PictureBox pbxUpArrow;
         private System.Windows.Forms.PictureBox pbxDownArrow;
+        private System.Windows.Forms.CheckBox chkUseResultsForm;
+        private System.Windows.Forms.Button btnClearBothTextBoxes;
     }
 }
 

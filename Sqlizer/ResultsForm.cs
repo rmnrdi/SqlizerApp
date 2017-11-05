@@ -26,7 +26,13 @@ namespace Sqlizer
 
         private void ResultsForm_Load(object sender, EventArgs e)
         {
+            
             txtResults.Text = ResultsFormText.ToString();
+        }
+
+        private void btnCopyToClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtResults.Text);
         }
     }
 }
