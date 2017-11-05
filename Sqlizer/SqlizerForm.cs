@@ -55,7 +55,7 @@ namespace Sqlizer
         }
 
         /// <summary>
-        /// Converts SQL into string
+        /// Converts SQL into string a string for use by Delphi SQL String Builder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
