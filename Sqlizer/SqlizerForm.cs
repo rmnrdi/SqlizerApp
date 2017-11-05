@@ -157,6 +157,12 @@ namespace Sqlizer
             txtString.Clear();
         }
 
+        /// <summary>
+        /// Removes any characters passed in as a param
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="chars"></param>
+        /// <returns></returns>
         public string RemoveChars(string input, params char[] chars)
         {
             var sb = new StringBuilder();
