@@ -1,0 +1,10 @@
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\bin\Debug\Sqlizer.exe.config
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\bin\Debug\Sqlizer.exe
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\bin\Debug\Sqlizer.pdb
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.csprojResolveAssemblyReference.cache
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.SqlizerForm.resources
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.Properties.Resources.resources
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.csproj.GenerateResource.Cache
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.csproj.CoreCompileInputs.cache
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.exe
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.pdb
