@@ -29,7 +29,7 @@ namespace Sqlizer
 
             string[] stringSqlInputAsArray = sqlInput.Split(' ');
 
-            //Adds date function back into
+            //Adds date function back into string
             string dateFunctionAdded = "";
             foreach (string item in stringSqlInputAsArray)
             {
