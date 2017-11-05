@@ -102,9 +102,14 @@ namespace Sqlizer
 
             var finishedString = builtSqlStringAdded;
 
-            ClearBothTextBoxes();
+            ResultsForm resultsForm = new ResultsForm();
+            resultsForm.ResultsFormText = finishedString;
 
-            txtString.Text = finishedString;
+            resultsForm.ShowDialog();
+
+            //ClearBothTextBoxes();
+
+            //txtString.Text = finishedString;
         }
 
         /// <summary>
@@ -146,10 +151,16 @@ namespace Sqlizer
                 }
             }
 
-            string finalSqlString = dateFunctionRemoved;
-            ClearBothTextBoxes();
+            string finishedSQLString = dateFunctionRemoved;
 
-            txtSql.Text = finalSqlString;
+            ResultsForm resultsForm = new ResultsForm();
+            resultsForm.ResultsFormText = finishedSQLString;
+
+            resultsForm.ShowDialog();
+
+            //ClearBothTextBoxes();
+
+            //txtSql.Text = finalSqlString;
         }
         public void ClearBothTextBoxes()
         {

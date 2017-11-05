@@ -66,7 +66,7 @@
             // 
             // btnSqlize
             // 
-            this.btnSqlize.Location = new System.Drawing.Point(919, 514);
+            this.btnSqlize.Location = new System.Drawing.Point(1065, 511);
             this.btnSqlize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSqlize.Name = "btnSqlize";
             this.btnSqlize.Size = new System.Drawing.Size(230, 75);
@@ -78,11 +78,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 29);
+            this.label1.Size = new System.Drawing.Size(173, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Put SQL Here";
             // 
@@ -99,11 +99,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(18, 564);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 29);
+            this.label2.Size = new System.Drawing.Size(191, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Put String Here";
             // 
@@ -119,7 +119,7 @@
             // 
             // btnClearStringText
             // 
-            this.btnClearStringText.Location = new System.Drawing.Point(1166, 514);
+            this.btnClearStringText.Location = new System.Drawing.Point(1312, 511);
             this.btnClearStringText.Name = "btnClearStringText";
             this.btnClearStringText.Size = new System.Drawing.Size(230, 75);
             this.btnClearStringText.TabIndex = 4;
@@ -130,9 +130,9 @@
             // pbxUpArrow
             // 
             this.pbxUpArrow.Image = ((System.Drawing.Image)(resources.GetObject("pbxUpArrow.Image")));
-            this.pbxUpArrow.Location = new System.Drawing.Point(711, 422);
+            this.pbxUpArrow.Location = new System.Drawing.Point(864, 419);
             this.pbxUpArrow.Name = "pbxUpArrow";
-            this.pbxUpArrow.Size = new System.Drawing.Size(201, 167);
+            this.pbxUpArrow.Size = new System.Drawing.Size(194, 167);
             this.pbxUpArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxUpArrow.TabIndex = 5;
             this.pbxUpArrow.TabStop = false;
