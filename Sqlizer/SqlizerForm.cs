@@ -54,12 +54,12 @@ namespace Sqlizer
             {
                 if (iterator == 0)
                 {
-                    builtSqlStringAdded += "BuiltSQL := ' " + line.Trim() + "';" + Environment.NewLine;
+                    builtSqlStringAdded += "BuiltSQL := ' " + line.Trim() + " ';" + Environment.NewLine;
                     iterator++;
                 }
                 else if (iterator > 0)
                 {
-                    builtSqlStringAdded += "BuiltSQL := BuiltSQL + '" + line.Trim() + "';" + Environment.NewLine;
+                    builtSqlStringAdded += "BuiltSQL := BuiltSQL + '" + line.Trim() + " ';" + Environment.NewLine;
                 }
             }
 
