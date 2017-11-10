@@ -15,17 +15,130 @@ namespace Sqlizer
         public SqlizerForm()
         {
             InitializeComponent();
-            chkUseResultsForm.Checked = true;
         }
 
         /// <summary>
-        /// Converts SQL into string a string for use by Delphi SQL String Builder
+        /// Converts a string into SQL
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnStringify_Click(object sender, EventArgs e)
+        private void btnConvert_Click(object sender, EventArgs e)
         {
-            var sqlInput = txtSql.Text;
+            var inputString = txtString.Text;
+
+            if (inputString.ToLower().Contains("builtsql"))
+            {
+                Sqlize(inputString);
+            }
+            else
+            {
+                Stringify(inputString);
+            }
+        }
+
+        public void Sqlize(string input)
+        {
+
+            //Stripping functions
+            string stringInput = input;
+
+            string plusesRemoved = RemoveChars(stringInput, '+');
+
+            string doubleQuotesReplacedWithPercent = plusesRemoved.Replace("''", "%");
+
+            string singleQuotesRemoved = doubleQuotesReplacedWithPercent.Replace('\'', ' ');
+            //TODO set up logic to leave text in single quotes
+            //string singleQuotesRemoved = string.Join(" ", doubleQuotesReplacedWithStars.Split(' ').Select(x => x.Trim('\'')));
+
+            string fullyStripped = singleQuotesRemoved.Replace(";", "");
+
+            string trailingSemiColonAdded = fullyStripped += ';';
+
+            //Rebuilding functions
+            string[] stringAsArray = trailingSemiColonAdded.Split(' ');
+
+            string quotedString = "";
+            foreach (string item in stringAsArray)
+            {
+                if (item.Contains("%"))
+                {
+                  quotedString +=  item.Replace("%", "'");
+                }
+                else
+                {
+                    quotedString += item + " ";
+                }
+            }
+
+            string[] quotedStringToArray = quotedString.Split(' ');
+
+            string replacedEmptyStrings = "";
+            foreach (var item in quotedStringToArray)
+            {
+                if (item.Contains("''"))
+                {
+                    replacedEmptyStrings += item.Replace("''", " + ");
+                }
+                else
+                {
+                    replacedEmptyStrings += item + " ";
+                }
+            }
+
+            string[] replacedEmptyStringsToArray = replacedEmptyStrings.Split(' ');
+
+            string dateFunctionRemoved = "";
+            foreach (string item in replacedEmptyStringsToArray)
+            {
+                if (item.Contains("DateTime") && item.Contains("(") && !String.IsNullOrEmpty(item))
+                {
+                    dateFunctionRemoved += item.Replace(item, "'yyyy-mm-dd 00:00:00.000/23:59:59.999'");
+                }
+                else if (item.ToLower().Contains("builtsql") || item.Contains(":="))
+                {
+                    dateFunctionRemoved += item.Replace(item, "");
+                }
+                else
+                {
+                    dateFunctionRemoved += item + " ";
+                }
+            }
+
+            string[] dateFunctionRemovedToArray = dateFunctionRemoved.Split(' ');
+
+            string dateSingleQuotesRemoved = "";
+            foreach (var item in dateFunctionRemovedToArray)
+            {
+                if (item.Contains("'yyyy"))
+                {
+                    dateSingleQuotesRemoved += item.Replace("'", " " + " ") + " ";
+                }
+                else if (item.Contains("999'"))
+                {
+                    dateSingleQuotesRemoved += item.Replace("'", " " + " ") + " ";
+                }
+                else
+                {
+                    dateSingleQuotesRemoved += item + " ";
+                }
+            }
+
+
+            string finishedSQLString = dateSingleQuotesRemoved;
+
+
+            ResultsForm resultsForm = new ResultsForm();
+            resultsForm.ResultsFormText = finishedSQLString;
+
+            resultsForm.ShowDialog();
+
+        }
+       
+
+
+        public void Stringify(string input)
+        {
+            var sqlInput = input;
 
             string[] stringSqlInputAsArray = sqlInput.Split(' ');
 
@@ -65,77 +178,12 @@ namespace Sqlizer
 
             var finishedString = builtSqlStringAdded;
 
-            if (chkUseResultsForm.Checked)
-            {
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.ResultsFormText = finishedString;
+            ResultsForm resultsForm = new ResultsForm();
+            resultsForm.ResultsFormText = finishedString;
 
-                resultsForm.ShowDialog();
-            }
-            else
-            {
-                //ClearBothTextBoxes();
+            resultsForm.ShowDialog();
 
-                txtSql.Text = finishedString;
-            }
-
-            
         }
-
-        /// <summary>
-        /// Converts a string into SQL
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSqlize_Click(object sender, EventArgs e)
-        {
-            string stringInput = txtString.Text;
-
-            string plusesRemoved = RemoveChars(stringInput, '+', '\'');
-
-            string singleQuotesRemoved = string.Join(" ", plusesRemoved.Split(' ').Select(x => x.Trim('\'')));
-
-            string preStripped = singleQuotesRemoved.Trim('\'', ';');
-
-            string fullyStripped = preStripped.Replace(";", "");
-
-            string semicolonAdded = fullyStripped += ';';
-
-            string[] stringAsArray = semicolonAdded.Split(' ');
-
-
-            string dateFunctionRemoved = "";
-            foreach (string item in stringAsArray)
-            {
-                if (item.Contains("Date") && item.Contains("(") && !String.IsNullOrEmpty(item))
-                {
-                    dateFunctionRemoved += item.Replace(item, "'---Date---'");
-                }
-                else if (item.ToLower().Contains("builtsql") || item.Contains(":="))
-                {
-                    dateFunctionRemoved += item.Replace(item, "");
-                }
-                else
-                {
-                    dateFunctionRemoved += item + " ";
-                }
-            }
-
-            string finishedSQLString = dateFunctionRemoved;
-
-            if (chkUseResultsForm.Checked)
-            {
-                ResultsForm resultsForm = new ResultsForm();
-                resultsForm.ResultsFormText = finishedSQLString;
-
-                resultsForm.ShowDialog();
-            }
-            else
-            {
-                txtSql.Text = finishedSQLString;
-            }
-        }
-        
 
         /// <summary>
         /// Removes character/s from a string based on the params passed in. 
@@ -156,23 +204,23 @@ namespace Sqlizer
 
         public void ClearBothTextBoxes()
         {
-            txtSql.Clear();
             txtString.Clear();
         }
 
-        private void btnClearSqlText_Click(object sender, EventArgs e)
-        {
-            txtSql.Clear();
-        }
+       
 
         private void btnClearStringText_Click(object sender, EventArgs e)
         {
             txtString.Clear();
         }
 
-        private void btnClearBothTextBoxes_Click(object sender, EventArgs e)
+        private void btnValidate_Click(object sender, EventArgs e)
         {
-            ClearBothTextBoxes();
+            var inputText = txtString.Text;
+            ValidatorForm validator = new ValidatorForm();
+            validator.ValidatorFormText = inputText;
+
+            validator.ShowDialog();
         }
     }
 }

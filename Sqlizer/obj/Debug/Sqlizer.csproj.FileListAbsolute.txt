@@ -9,3 +9,4 @@ C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\S
 C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.exe
 C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.pdb
 C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.ResultsForm.resources
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Debug\Sqlizer.ValidatorForm.resources

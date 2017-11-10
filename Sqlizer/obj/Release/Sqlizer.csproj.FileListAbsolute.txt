@@ -8,3 +8,5 @@ C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Release
 C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Release\Sqlizer.csproj.CoreCompileInputs.cache
 C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Release\Sqlizer.exe
 C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Release\Sqlizer.pdb
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Release\Sqlizer.csprojResolveAssemblyReference.cache
+C:\Users\rmina\Documents\Visual Studio 2017\Projects\Sqlizer\Sqlizer\obj\Release\Sqlizer.ValidatorForm.resources
