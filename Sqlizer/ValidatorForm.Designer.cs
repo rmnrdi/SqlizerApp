@@ -30,6 +30,7 @@
         {
             this.rtxtValidated = new System.Windows.Forms.RichTextBox();
             this.rtxtErrorMessage = new System.Windows.Forms.RichTextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtxtValidated
@@ -52,11 +53,22 @@
             this.rtxtErrorMessage.TabIndex = 1;
             this.rtxtErrorMessage.Text = "";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(1318, 701);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(188, 66);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // ValidatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1518, 779);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.rtxtErrorMessage);
             this.Controls.Add(this.rtxtValidated);
             this.Name = "ValidatorForm";
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.RichTextBox rtxtValidated;
         private System.Windows.Forms.RichTextBox rtxtErrorMessage;
+        private System.Windows.Forms.Button btnClose;
     }
 }

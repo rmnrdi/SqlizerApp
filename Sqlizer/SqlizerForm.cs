@@ -47,6 +47,7 @@ namespace Sqlizer
             string doubleQuotesReplacedWithPercent = plusesRemoved.Replace("''", "%");
 
             string singleQuotesRemoved = doubleQuotesReplacedWithPercent.Replace('\'', ' ');
+
             //TODO set up logic to leave text in single quotes
             //string singleQuotesRemoved = string.Join(" ", doubleQuotesReplacedWithStars.Split(' ').Select(x => x.Trim('\'')));
 

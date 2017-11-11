@@ -12,7 +12,7 @@ namespace Sqlizer
 {
     public partial class ValidatorForm : Form
     {
-        public object ValidatorFormText { get; set; }
+        public string ValidatorFormText { get; set; }
 
         public ValidatorForm()
         {
@@ -68,6 +68,11 @@ namespace Sqlizer
                     richText.SelectionBackColor = backColor;
                 }
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Sqlizer
 {
     public partial class ResultsForm : Form
     {
-        public object ResultsFormText { get; set; }
+        public string ResultsFormText { get; set; }
 
         public ResultsForm()    
         {
